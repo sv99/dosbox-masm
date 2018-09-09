@@ -61,7 +61,7 @@ CMPXCHG8B       Compare and Exchange 8 Bytes
            
   Syntax                  Example                 Clock Cycles  
   ------                  -------                 -----------
-  CMPXCHG8B mem64         cmpxchg8b [bx]          10  
+  CMPXCHG8B reg,mem64     cmpxchg8b ax,[bx]       10  
 
 
 -----------------------------------------------------------------------------

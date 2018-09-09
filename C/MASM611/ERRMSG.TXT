@@ -1,5 +1,5 @@
 		     Notes on MASM 6.11 Error Messages
-		     (c) Copyright Microsoft Corp. 1994
+		     (c) Copyright Microsoft Corp. 1993
 
      
      This text file contains information on the following:
@@ -40,7 +40,7 @@
      containing the 16-bit LINK.EXE must be listed before the directory 
      containing the 32-bit linker.
 
-     	
+
      ML Errors Update
      ----------------
      The following is updated information on ML error messages. The
@@ -51,7 +51,7 @@
 
 		 The assembler could not load the file because all memory 
 		 is exhausted. For ML.EXE to run with the Microsoft Windows 
-		 operating system, a Windows swap file is often needed.
+		 operating system, a Windows swap file must exist.
 
 
 	  A1018: COFF error writing file
@@ -92,12 +92,11 @@
 		 error.
 
 
-	  A2112: PROC and prototype calling conventions conflict
+	  A2210: 16-bit segments not allowed with /coff option
 
-		 The assembler has detected that the proc and prototype
-		 statements contain different calling conventions. Make sure 
-		 the calling conventions in the proc and prototype 
-		 statements are the same.	  
+		 You have attempted to compile a 16-bit segment module with
+		 the /coff option. Remove the /coff switch from your command
+		 line and recompile.
 		 
 
 	  A2211: FAR not allowed in flat-model comm variables
@@ -112,30 +111,7 @@
 		 The assembler has detected nearstack or farstack 
 		 directives in a flat-model program. These directives are 
 		 irrelevant for flat-model programs and should be removed.
-
-
-	  A2213: ALIAS name is empty
-
-		 The assembler has detected that a parameter in the alias 
-		 statement is empty. To remedy the situation, fill in the 
-		 empty alias parameter.
 	  
-
-	  A2214: GROUP directive not allowed with /coff option
-
-		 The assembler has detected that a group directive along
-		 with the /coff option. The group directive and it's 
-		 parameters should be removed. 
-
-
-	  A2215: .FPO is not compatible with nested procedures.
-
-		 The .FPO directive should not be used within nested 
-		 procedures. Remove the nested procedure or the .FPO
-		 directive from the nested procedure.
-
-     ML Warnings Update
-     ------------------
 
 	  A4014: directive ignored with /coff switch
 
@@ -162,29 +138,6 @@
 		 The option was removed and ML compiled as it normally
 		 would.
 
-
-	  A4018: directive ignored without /coff switch
-
-		 The assembler has detected a directive that will be ignored
-		 if the /coff command line option isn't used. The .FPO 
-		 directive must be used with the /coff switch. 
-
-
-	  A4019: directive ignored outside a procedure
-
-		 The assembler has encountered a directive, such as the .FPO 
-		 directive, that should have been used within a procedure. 
-		 This directive will be ignored by the assembler. 
-
-
-	  A4020: LOADDS ignored in flat model
-
-		 You have attempted to use the <loadds> operand in a 
-		 flat model program. Due to the nature of flat model
-		 programming, the DS register need not be saved on 
-		 procedure calls. Remove the <loadds> operand from 
-		 your source. 
-		
 
 	  A5006: calling convention not supported in flat model
 
@@ -299,7 +252,7 @@
 
 		  DOSXNT cannot load the executable file because all memory 
 		  is exhausted. For ML.EXE to run with the Microsoft Windows 
-		  operating system, a Windows swap file may be required.
+		  operating system, a Windows swap file must exist.
 
 
 	  DX5420: CheckDPMI: error when checking for coprocessor support
